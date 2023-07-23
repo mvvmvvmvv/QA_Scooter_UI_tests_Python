@@ -1,17 +1,15 @@
 import pytest
-from selenium.webdriver.common.by import By
+
 from selenium import webdriver
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as ec
+from selenium.webdriver.firefox.service import Service as FirefoxService
+from webdriver_manager.firefox import GeckoDriverManager
 
 from urls import Urls
-
-from faker import Faker
 
 
 @pytest.fixture
 def driver():
-    browser = webdriver.Chrome()
+    browser = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
     browser.maximize_window()
     browser.get(Urls.HOME_PAGE)
     yield browser
