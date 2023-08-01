@@ -34,4 +34,12 @@ class RentFormDetailsPage(BasePage):
     def submit_order(self):
         self.click(RentFormDetailsLocators.SUBMIT_ORDER_BUTTON)
 
+    @allure.step('Заполняем всю форму деталей заказа')
+    def fill_details_page(self, date, index, color, comment):
+        self.input_date(date)
+        self.select_length(index)
+        self.select_color(color)
+        self.write_comment(comment)
+        self.submit_order()
+
 

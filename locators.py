@@ -3,11 +3,14 @@ from selenium.webdriver.common.by import By
 
 class HomePageLocators:
     ORDER_BUTTON_IN_HEADER = [By.CLASS_NAME, 'Button_Button__ra12g']
-    ORDER_BUTTON_BIG = [By.CLASS_NAME, 'Button_Button__ra12g Button_UltraBig__UU3Lp']
+    ORDER_BUTTON_BIG = [By.XPATH, ".//div[@class='Home_FinishButton__1_cWm']/button[contains(@class, "
+                                  "'Button_Button__ra12g')]"]
+
 
 
 class FaqAccordionLocators:
     FAQ_HEADING = [By.XPATH, ".//div[text()='Вопросы о важном'"]
+    FAQ_SCROLL_ANCHOR = [By.CLASS_NAME, 'Home_FAQ__3uVm4']
     ACCORDION_BUTTON_LOCATOR = 'accordion__heading-{}'
     ACCORDION_PANEL_LOCATOR = 'accordion__panel-{}'
 

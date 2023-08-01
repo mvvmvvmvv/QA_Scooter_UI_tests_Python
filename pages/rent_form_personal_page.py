@@ -32,3 +32,12 @@ class RentFormPersonalPage(BasePage):
     def click_continue(self):
         self.click(RentFormPersonalLocators.CONTINUE_BUTTON)
 
+    @allure.step('Заполняем всю форму личных данных')
+    def fill_personal_data_page(self, first_name, second_name, address, metro, telephone):
+        self.input_first_name(first_name)
+        self.input_second_name(second_name)
+        self.input_address(address)
+        self.input_metro(metro)
+        self.input_telephone(telephone)
+        self.click_continue()
+

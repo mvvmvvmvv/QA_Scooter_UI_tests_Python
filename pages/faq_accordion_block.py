@@ -13,8 +13,8 @@ class FaqAccordionBlock(BasePage):
         accordion_heading_locator = \
             FaqAccordionLocators.ACCORDION_BUTTON_LOCATOR.format(index)
 
-        important_questions = self.find_element_located((By.CLASS_NAME, 'Home_FAQ__3uVm4'))
-        self.driver.execute_script("arguments[0].scrollIntoView();", important_questions)
+        important_questions = self.find_element_located(FaqAccordionLocators.FAQ_SCROLL_ANCHOR)
+        self.scroll_to_element_script(important_questions)
 
         accordion_item = WebDriverWait(self.driver, 10)\
             .until(EC.visibility_of_element_located((By.ID, accordion_heading_locator)))
